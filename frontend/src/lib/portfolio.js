@@ -1,3 +1,4 @@
+import { P } from "@/lib/path";
 // Content for the portfolio. Anything in [square brackets] is a fact only you know —
 // fill these before publishing. They render as dashed "add" pills so they're easy to spot.
 export const TODO = (label) => ({ todo: label });
@@ -37,9 +38,9 @@ export const SERIES = {
     ["Native language", "Hinglish voiceover and captions, written for Indian short-form viewers."],
   ],
   episodes: [
-    { id: "ep1", tag: "EP1 · 0:44", choice: "TAKE or WALK", src: "/videos/ep1.mp4", poster: "/images/posters/ep1.jpg" },
-    { id: "ep2", tag: "EP2 · 0:59", choice: "RUN or TELL", src: "/videos/ep2.mp4", poster: "/images/posters/ep2.jpg" },
-    { id: "ep3", tag: "EP3 · 0:59", choice: "BOARD or HIDE", src: "/videos/ep3.mp4", poster: "/images/posters/ep3.jpg" },
+    { id: "ep1", tag: "EP1 · 0:44", choice: "TAKE or WALK", src: P("/videos/ep1.mp4"), poster: P("/images/posters/ep1.jpg") },
+    { id: "ep2", tag: "EP2 · 0:59", choice: "RUN or TELL", src: P("/videos/ep2.mp4"), poster: P("/images/posters/ep2.jpg") },
+    { id: "ep3", tag: "EP3 · 0:59", choice: "BOARD or HIDE", src: P("/videos/ep3.mp4"), poster: P("/images/posters/ep3.jpg") },
   ],
   results: TODO("views, comments, vote counts, follows gained, watch-through rate, per episode"),
   tools: TODO("image model, video model, voice, editor, automation tool"),
@@ -54,7 +55,7 @@ export const HISTORY = {
     ["Culturally specific detail", "Costume, architecture and Indian history, which generic prompts rarely get right without careful direction."],
     ["Cinematic grading", "Warm light, shallow depth of field, slow camera moves."],
   ],
-  video: { tag: "Cinematic history · 0:55", src: "/videos/maratha.mp4", poster: "/images/posters/maratha.jpg" },
+  video: { tag: "Cinematic history · 0:55", src: P("/videos/maratha.mp4"), poster: P("/images/posters/maratha.jpg") },
   results: TODO("views, shares, saves, retention"),
 };
 
@@ -74,7 +75,7 @@ export const FORMAT = {
     ["Captions as a track", "Subtitles are embedded, so the same file works with or without burned-in text."],
     ["Fast to produce", "One question in, one short out. This is the throughput proof."],
   ],
-  video: { tag: "Day 3 · 0:27", src: "/videos/day3.mp4", poster: "/images/posters/day3.jpg" },
+  video: { tag: "Day 3 · 0:27", src: P("/videos/day3.mp4"), poster: P("/images/posters/day3.jpg") },
   results: TODO("days posted, total views, best-performing day, posting streak"),
 };
 

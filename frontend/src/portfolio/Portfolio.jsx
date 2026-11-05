@@ -1,5 +1,6 @@
 import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import VideoPhone from "./VideoPhone";
+import { P } from "@/lib/path";
 import { scrollToId } from "@/lib/lenis";
 import {
   SITE, SERIES, HISTORY, FORMAT, PIPELINE, PIPELINE_POINTS, STORY_JSON, PIPELINE_TOOLS, SERVICES, SKILLS,
@@ -54,7 +55,7 @@ function Hero() {
             <div className={`float ${f.cls}`} key={f.k}><span>{f.k}</span><b>{f.v}</b></div>
           ))}
           <div className="hero__device">
-            <VideoPhone hero src="/videos/ep1.mp4" poster="/images/posters/ep1.jpg" label="The Golden Mask · EP1" />
+            <VideoPhone hero src={P("/videos/ep1.mp4")} poster={P("/images/posters/ep1.jpg")} label="The Golden Mask · EP1" />
           </div>
         </div>
       </div>
