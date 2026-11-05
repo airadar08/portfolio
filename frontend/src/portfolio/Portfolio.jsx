@@ -92,7 +92,7 @@ function Series() {
     <section className="wrap section" id="work">
       <header className="section__head">
         <span className="badge">Case study · Series</span>
-        <h2 className="display">The Four Minutes</h2>
+        <h2 className="display">Golden Mask</h2>
         <p>{SERIES.summary}</p>
       </header>
 

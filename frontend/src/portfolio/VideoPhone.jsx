@@ -55,6 +55,11 @@ export default function VideoPhone({ src, poster, label, hero = false }) {
           playsInline
           preload="metadata"
           className="phone__video"
+          controlsList="nodownload noremoteplayback noplaybackrate"
+          disablePictureInPicture
+          disableRemotePlayback
+          draggable={false}
+          onContextMenu={(e) => e.preventDefault()}
           onClick={toggle}
         />
         <button className="phone__sound" onClick={toggle} aria-label={muted ? "Unmute" : "Mute"}>

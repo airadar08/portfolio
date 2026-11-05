@@ -266,3 +266,12 @@ body { font-family: var(--sans) !important; }
 .pf .btn--white { color: #000; }
 .pf .btn--glass, .pf .btn--blue { color: #fff; }
 .pf .btn--ghost { color: #000; }
+
+/* Centre the three episodes */
+.pf .phones { justify-content: center; justify-items: center; }
+.pf .phones .phone { width: 100%; }
+.pf .phones .phone__label { text-align: center; padding-left: 0; }
+@media (max-width: 860px) { .pf .phones { justify-items: center; } .pf .phones .phone { width: min(280px, 80vw); } }
+
+/* Make casual saving harder: no long-press menu, drag or text-select on media */
+.phone__video { -webkit-touch-callout: none; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
