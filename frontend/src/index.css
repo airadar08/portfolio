@@ -1,0 +1,166 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 30 13% 7%;
+        --foreground: 36 33% 93%;
+        --card: 30 14% 10%;
+        --card-foreground: 36 33% 93%;
+        --popover: 30 14% 10%;
+        --popover-foreground: 36 33% 93%;
+        --primary: 36 79% 57%;
+        --primary-foreground: 30 13% 7%;
+        --secondary: 32 12% 15%;
+        --secondary-foreground: 36 33% 93%;
+        --muted: 32 12% 15%;
+        --muted-foreground: 34 10% 63%;
+        --accent: 32 12% 15%;
+        --accent-foreground: 36 33% 93%;
+        --destructive: 335 100% 59%;
+        --destructive-foreground: 36 33% 93%;
+        --border: 36 20% 20%;
+        --input: 36 20% 22%;
+        --ring: 36 79% 57%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    html {
+        background-color: #14110e;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Manrope', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    ::selection {
+        background: #e8a33d;
+        color: #14110e;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #14110e;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #3a322a;
+        border: 2px solid #14110e;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #e8a33d;
+    }
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+/* Film grain */
+.grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.32;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+}
+
+/* Editorial marquee */
+@keyframes marquee-drift {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+.animate-marquee {
+    animation: marquee-drift 52s linear infinite;
+}
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Redacted intel bars */
+.redacted {
+    position: relative;
+    display: inline-block;
+    background: #0b0908;
+    color: transparent;
+    padding: 0 0.4em;
+    border: 1px solid rgba(232, 163, 61, 0.25);
+    cursor: help;
+    transition: color 0.4s ease, background 0.4s ease;
+    user-select: none;
+}
+.redacted:hover {
+    background: rgba(232, 163, 61, 0.12);
+    color: #e8a33d;
+}
+
+/* Live pulse dot */
+@keyframes live-pulse {
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 46, 136, 0.55);
+    }
+    50% {
+        box-shadow: 0 0 0 7px rgba(255, 46, 136, 0);
+    }
+}
+.live-dot {
+    animation: live-pulse 1.6s ease-in-out infinite;
+}
+
+/* Horizontal episode rail scrollbar */
+.episode-rail {
+    scrollbar-width: thin;
+    scrollbar-color: #3a322a #14110e;
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
