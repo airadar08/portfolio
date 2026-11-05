@@ -54,7 +54,7 @@ function Hero() {
             <div className={`float ${f.cls}`} key={f.k}><span>{f.k}</span><b>{f.v}</b></div>
           ))}
           <div className="hero__device">
-            <VideoPhone hero src="/videos/ep1.mp4" poster="/images/posters/ep1.jpg" label="The Four Minutes · EP1" />
+            <VideoPhone hero src="/videos/ep1.mp4" poster="/images/posters/ep1.jpg" label="The Golden Mask · EP1" />
           </div>
         </div>
       </div>
